@@ -181,7 +181,6 @@ nav h1 {
 }
 #restaurants-list li a {
   background-color: orange;
-  /*border-bottom: 3px solid #eee;*/
   box-shadow: -1px 8px 18px -8px black;
   color: #fff;
   display: inline-block;
@@ -206,6 +205,7 @@ nav h1 {
 
 .inside #map {
   top: 131px;
+  border-bottom:  25px solid #3397DB;
 }
 
 .inside #footer {
