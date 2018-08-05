@@ -6,7 +6,7 @@ var markers = []
 
 // Service Worker registration
 if (navigator.serviceWorker){
-  navigator.serviceWorker.register("sw.js")
+  navigator.serviceWorker.register("./sw.js")
   .then(registration => console.log("Service Worker registered", registration))
   .catch(error => console.log("Service Worker Registration failed", error));
 }
@@ -43,6 +43,7 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
     option.value = neighborhood;
+    option.setAttribute('tabindex', '0');
     select.append(option);
   });
 }
@@ -71,6 +72,7 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
     const option = document.createElement('option');
     option.innerHTML = cuisine;
     option.value = cuisine;
+    option.setAttribute('tabindex', '0');
     select.append(option);
   });
 }
@@ -163,23 +165,30 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  * Create restaurant HTML.
  */
 createRestaurantHTML = (restaurant) => {
+  console.log(restaurant);
   const li = document.createElement('li');
+  li.setAttribute('tabindex', '0');
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = `Image of ${restaurant.name}`;
+  image.setAttribute('tabindex', '0');
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
+  name.setAttribute('tabindex', '0');
   li.append(name);
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
+  neighborhood.setAttribute('tabindex', '0');
   li.append(neighborhood);
 
-  const address = document.createElement('p');
+  const address = document.createElement('address');
   address.innerHTML = restaurant.address;
+  address.setAttribute('tabindex', '0');
   li.append(address);
 
   const more = document.createElement('a');

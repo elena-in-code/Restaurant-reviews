@@ -6,6 +6,7 @@ Thanks to: <br/>
 https://github.com/Sugahzor/udacity-restaurants-stage1 <br/>
 https://github.com/BycorSanchez/restaurant-reviews <br/>
 https://github.com/rush2406/Udacity-Restaurant-Reviews-Stage1 <br/>
+https://github.com/Syknapse/restaurant_review_fend <br/>
 for sharing their code for the rest to get inspiration <br/>
 <hr>
 
